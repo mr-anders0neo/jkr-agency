@@ -1,0 +1,184 @@
+/****** common styles *******/
+body {
+    font-family: 'DM Sans', serif;
+    font-size: 16px;
+    margin: 0;
+    background: #F2F6F7;
+}
+/****** jkr-header styles *******/
+.jkr-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 1% 10%;
+}
+.jkr-header, .jkr-header-title {
+    display: flex;
+    align-items: center;
+}
+.jkr-header-title {
+    font-weight: bold;
+    font-size: 30px;
+}
+.jkr-header-title img {
+    width: 2rem;
+    margin-right: 0.5rem;
+}
+.jkr-header-menu {
+    list-style: none;
+    display: flex;
+    font-size: 20px;
+    width: 70%;
+    justify-content: space-around;
+}
+.jkr-header-menu a {
+    text-decoration: none;
+    color: black;
+}
+.jkr-header-menu li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+/****** jkr-main content styles *******/
+.jkr-content1 {
+    display: flex;
+    align-items: center;
+    margin: 5% 10%;
+}
+.jkr-content1 img {
+    width: 60%;
+    margin-right: 5%;
+}
+.jkr-content1-title {
+    font-size: 30px;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+/****** jkr-buy content styles *******/
+.jkr-buy {
+    padding: 2% 0;
+    background-color: white;
+}
+.jkr-buy-title {
+    text-align: center;
+    margin: auto;
+    padding: 2% 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.jkr-buy-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.jkr-buy-content img {
+    width: 100%;
+}
+.jkr-buy-card {
+    margin: 0 1%;
+    background-color: #F2F6F7;
+}
+.jkr-card-content {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.jkr-card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.jkr-card-desc, .jkr-card-price {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+.jkr-card-price {
+    font-weight: bold;
+}
+.jkr-buy-card button {
+    width: 50%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+/****** jkr-sell content styles *******/
+.jkr-sell {
+    margin: 2% 10%;
+    background-color: #F2F6F7;
+}
+.jkr-sell-title {
+    text-align: center;
+    margin: auto;
+    padding: 2% 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.jkr-sell-content  {
+    display: flex;
+    align-items: center;
+}
+.jkr-sell-content-left {
+    width: 55%;
+    margin-right: 5%;
+}
+.jkr-sell-content-left img {
+    width: 100%;
+}
+.jkr-sell-content-right p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+.jkr-sell-content-right form {
+    margin-top: 1rem;
+}
+.jkr-sell-content-right label {
+    font-size: 1.25rem;
+}
+.jkr-sell-content-right input {
+    width: 80%;
+    margin: 0.5rem 0;
+}
+.jkr-sell-content-right button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+/****** jkr-amenities content styles *******/
+.jkr-amenities {
+    padding: 2% 10%;
+    background-color: white;
+}
+.jkr-amenities-title {
+    text-align: center;
+    margin: auto;
+    padding: 2% 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.jkr-amenities-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.jkr-amenities-card {
+    width: 30%;
+    text-align: center;
+    margin: 1rem;
+    background-color: #F2F6F7;
+}
+.jkr-amenities-card img {
+    margin: 5% 0;
+    width: 30%;
+}
+.jkr-amenities-card-title {
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+/****** jkr-footer styles *******/
+.jkr-footer {
+    display: flex;
+    justify-content: center;
+}
