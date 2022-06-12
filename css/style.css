@@ -1,44 +1,3 @@
-/****** common styles *******/
-body {
-    font-family: 'DM Sans', serif;
-    font-size: 16px;
-    margin: 0;
-    background: #F2F6F7;
-}
-/****** jkr-header styles *******/
-.jkr-header {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 1% 10%;
-}
-.jkr-header, .jkr-header-title {
-    display: flex;
-    align-items: center;
-}
-.jkr-header-title {
-    font-weight: bold;
-    font-size: 30px;
-}
-.jkr-header-title img {
-    width: 2rem;
-    margin-right: 0.5rem;
-}
-.jkr-header-menu {
-    list-style: none;
-    display: flex;
-    font-size: 20px;
-    width: 70%;
-    justify-content: space-around;
-}
-.jkr-header-menu a {
-    text-decoration: none;
-    color: black;
-}
-.jkr-header-menu li:hover{
-    cursor: pointer;
-    text-decoration: underline;
-}
 /****** jkr-main content styles *******/
 .jkr-content1 {
     display: flex;
@@ -176,9 +135,4 @@ body {
 .jkr-amenities-card-title {
     font-size: 1.25rem;
     margin: 1rem;
-}
-/****** jkr-footer styles *******/
-.jkr-footer {
-    display: flex;
-    justify-content: center;
 }
