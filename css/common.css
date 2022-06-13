@@ -1,9 +1,15 @@
 /****** common styles *******/
 body {
     font-family: 'DM Sans', serif;
-    font-size: 16px;
+    font-size: 1rem;
     margin: 0;
     background: #F2F6F7;
+    box-sizing: border-box;
+}
+button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
 }
 /****** jkr-header styles *******/
 .jkr-header {
@@ -38,6 +44,24 @@ body {
 .jkr-header-menu li:hover{
     cursor: pointer;
     text-decoration: underline;
+}
+@media screen and (max-width:600px) {
+    .jkr-header {
+        flex-wrap: wrap;
+    }
+    .jkr-header-title {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+    .jkr-header-menu {
+        flex-wrap: wrap;
+        padding: 1rem 0;
+        margin: auto;
+        text-align: center;
+    }
+    .jkr-header-menu li {
+        flex-basis: 100%;
+    }
 }
 /****** jkr-footer styles *******/
 .jkr-footer {

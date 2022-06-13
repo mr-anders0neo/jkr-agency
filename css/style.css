@@ -13,6 +13,22 @@
     margin-bottom: 2rem;
     font-weight: bold;
 }
+@media screen and (max-width:600px) {
+    .jkr-content1 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .jkr-content1 img {
+        width: 100%;
+        padding: 1rem 0;
+    }
+    .jkr-content1-text {
+        text-align: center;
+    }
+    .jkr-content1-title {
+        margin-bottom: 1rem;
+    }
+}
 /****** jkr-buy content styles *******/
 .jkr-buy {
     padding: 2% 0;
@@ -27,7 +43,7 @@
 }
 .jkr-buy-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 2rem;
 }
@@ -60,6 +76,17 @@
     font-size: 1rem;
     padding: 0.5rem;
     cursor: pointer;
+}
+@media screen and (max-width:600px) {
+    .jkr-buy-title {
+        padding: 2rem 0;
+    }
+    .jkr-buy-content {
+        flex-wrap: wrap;
+    }
+    .jkr-buy-card {
+        margin: 1rem;
+    }
 }
 /****** jkr-sell content styles *******/
 .jkr-sell {
@@ -95,7 +122,7 @@
 .jkr-sell-content-right label {
     font-size: 1.25rem;
 }
-.jkr-sell-content-right input {
+.jkr-sell-content-right input, .jkr-sell-content-right textarea {
     width: 80%;
     margin: 0.5rem 0;
 }
@@ -103,6 +130,20 @@
     font-size: 1rem;
     padding: 0.5rem;
     margin-top: 1rem;
+}
+@media screen and (max-width:600px) {
+    .jkr-sell-title {
+        padding: 2rem 0;
+    }
+    .jkr-sell-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .jkr-sell-content-left {
+        margin: 0;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
 }
 /****** jkr-amenities content styles *******/
 .jkr-amenities {
@@ -119,7 +160,7 @@
 .jkr-amenities-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .jkr-amenities-card {
@@ -135,4 +176,16 @@
 .jkr-amenities-card-title {
     font-size: 1.25rem;
     margin: 1rem;
+}
+@media screen and (max-width:600px) { 
+    .jkr-amenities-title {
+        padding: 2rem 0;
+    }
+    .jkr-amenities-content {
+        margin-bottom: 2rem;
+    }
+    .jkr-amenities-card {
+        width: 45%;
+        margin: 0.5rem 0;
+    }
 }
