@@ -1,16 +1,25 @@
 /****** jkr-main content styles *******/
 .jkr-content1 {
     display: flex;
-    align-items: center;
-    margin: 5% 10%;
+    justify-content: center;
+    text-align: center;
+    background: no-repeat center url('../img/home-bg-img.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
 }
 .jkr-content1 img {
     width: 60%;
     margin-right: 5%;
 }
+.jkr-content1-text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 21%;
+}
 .jkr-content1-title {
-    font-size: 30px;
-    margin-bottom: 2rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 @media screen and (max-width:600px) {

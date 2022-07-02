@@ -6,13 +6,15 @@
         <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="img/home-logo.png" type="image/icon">
+        <link rel="icon" href="img/home-logo.svg" type="image/icon">
     </head>
     <body>
         <div class="jkr-header">
             <div class="jkr-header-title">
-                <img src="img/home-logo.png" alt="Home Icon">
-                <div class="jkr-header-title-content">JKR Agency</div>
+                <a href="./index.html">
+                    <img src="img/home-logo.svg" alt="Home Icon">
+                    <div class="jkr-header-title-content">JKR Agency</div>
+                </a>
             </div>
             <ul class="jkr-header-menu">
                 <li><a href="./index.html">Home</a></li>
@@ -20,6 +22,9 @@
                 <li><a href="./services.html">Services</a></li>
                 <li><a href="./contact-us.html">Contact Us</a></li>
             </ul>
+            <div class="jkr-header-account">
+                <img src="img/home-account.png" alt="Account Login">
+            </div>
         </div>
         <div class="jkr-main">
             <div class="jkr-buy">
@@ -98,10 +103,13 @@
                 </div>
             </div>
         </div>
+        <canvas id="myChart" width="400" height="400"></canvas>
         <div class="jkr-footer">
             <p class="jkr-copyright">
                 © 2022 JKR Agency. All Rights Reserved
             </p>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

@@ -11,20 +11,30 @@ button {
     padding: 0.5rem;
     cursor: pointer;
 }
+a {
+    text-decoration: none;
+    color: white;
+}
 /****** jkr-header styles *******/
 .jkr-header {
     position: sticky;
     top: 0;
-    background: white;
+    background: black;
+    opacity: 0.9;
     padding: 1% 10%;
 }
 .jkr-header, .jkr-header-title {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .jkr-header-title {
     font-weight: bold;
     font-size: 30px;
+}
+.jkr-header-title a {
+    display: flex;
+    text-decoration: none;
 }
 .jkr-header-title img {
     width: 2rem;
@@ -37,9 +47,12 @@ button {
     width: 70%;
     justify-content: space-around;
 }
+.jkr-header-account img {
+    width: 2rem;
+    cursor: pointer;
+}
 .jkr-header-menu a {
     text-decoration: none;
-    color: black;
 }
 .jkr-header-menu li:hover{
     cursor: pointer;
