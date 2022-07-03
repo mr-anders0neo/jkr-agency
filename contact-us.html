@@ -6,9 +6,10 @@
         <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/contact-us.css">
         <link rel="icon" href="img/home-logo.svg" type="image/icon">
     </head>
-    <body>
+    <body class="contact">
         <header class="jkr-header">
             <div class="jkr-header-icon">
                 <img src="img/hamburger-menu.svg">
@@ -35,34 +36,48 @@
         <div class="jkr-sell">
             <div class="jkr-sell-title"><strong>Contact Us</strong></div>
             <div class="jkr-sell-content">
-                <div class="jkr-sell-content-left">
-                    <img src="img/home-contact.jpg">
-                </div>
-                <div class="jkr-sell-content-right">
-                    <p>We promise to get back to you as soon as we can!!</p>
-                    <br>
-                    <p>Contact us for more Info.</p>
-                    <form>
-                        <label for="jkr-fname">Name:</label><br>
-                        <input type="text" id="jkr-fname" name="jkr-fname" required><br>
-                        <label for="jkr-lname">Email:</label><br>
-                        <input type="text" id="jkr-lname" name="jkr-lname" required><br>
-                        <label for="jkr-phone">Mobile No:</label><br>
-                        <input type="tel" id="jkr-phone" name="jkr-phone" required><br>
-                        <label for="jkr-address">Address:</label><br>
-                        <input type="text" id="jkr-address" name="jkr-address" required><br>
-                        <label for="jkr-issue">Please mention your issue:</label><br>
-                        <textarea type="textarea" id="jkr-issue" name="jkr-issue" required></textarea><br>
-                        <button type="button">Submit</button>
-                    </form> 
-                </div>
+                <h2>We promise to get back to you as soon as we can!!</h2>
+                <h2>Contact us for more Info.</h2>
+                <form>
+                    <div class="field-fname">
+                        <label for="jkr-fname">First name:</label>
+                        <input type="text" id="jkr-fname" name="jkr-fname" required>
+                    </div>
+                    <div class="field-lname">
+                        <label for="jkr-lname">Last name:</label>
+                        <input type="text" id="jkr-lname" name="jkr-lname" required>
+                    </div>
+                    <div class="field-mail">
+                        <label for="jkr-mail">Email:</label>
+                        <input type="email" id="jkr-mail" name="jkr-mail" required>
+                    </div>
+                    <div class="field-mobile">
+                        <label for="jkr-phone">Mobile:</label>
+                        <input type="tel" id="jkr-phone" name="jkr-phone" required>
+                    </div>
+                    <div class="field-issue">
+                        <label for="jkr-issue">Your Issue:</label>
+                        <input type="text" id="jkr-issue" name="jkr-issue" required>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
-        <div class="jkr-footer">
-            <p class="jkr-copyright">
+        <footer class="jkr-footer">
+            <div class="jkr-social">
+                <h4>Follow us on:</h4>
+                <div class="jkr-media-links">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="img/home-facebook.svg"></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><img src="img/home-linkedin.svg"></a>
+                    <a href="https://www.twitter.com/" target="_blank"><img src="img/home-twitter.svg"></a>
+                    <a href="https://www.whatsapp.com/" target="_blank"><img src="img/home-whatsapp.svg"></a>
+                </div>
+            </div>
+            <h3 class="jkr-copyright">
                 © 2022 JKR. All Rights Reserved
-            </p>
-        </div>
+            </h3>
+            <img src="img/footer-art.svg">
+        </footer>
         <!-- login/register modal -->
         <div class="login-modal">
             <div class="jkr-close-login-icon">

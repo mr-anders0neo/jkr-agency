@@ -1,15 +1,20 @@
+.jkr-about-main {
+  background-color: black;
+  color: white;
+}
 .jkr-about-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .jkr-about-column {
-  width: 30%;
+  width: 25%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
 .jkr-about-main h2 {
   text-align: center;
+  margin: 3rem 0;
 }
 .jkr-about-card {
   display: flex;
@@ -17,12 +22,18 @@
   align-items: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 8px;
+  background-color: white;
+  color: black;
 }
 .jkr-about-section {
   padding: 50px;
   text-align: center;
-  background-color: #474e5d;
-  color: white;
+  color: black;
+  background-color: white;
+  background: no-repeat center url('../img/home-about-bg-img.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  font-weight: bold;
 }
 .jkr-about-card .container {
   padding: 0 16px;
@@ -35,16 +46,11 @@
   clear: both;
   display: table;
 }
-.jkr-about-card .title {
-  color: grey;
-}
 .jkr-about-card .button {
   border: none;
   outline: 0;
   display: inline-block;
   padding: 8px;
-  color: white;
-  background-color: #000;
   text-align: center;
   cursor: pointer;
   width: 100%;

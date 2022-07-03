@@ -1,0 +1,49 @@
+body.contact .jkr-sell {
+    background: black;
+    color: white;
+}
+.jkr-sell {
+    width: 100%;
+    margin: 0;
+}
+.jkr-sell-title {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    background-color: white;
+    background: no-repeat center url('../img/home-contact.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-weight: bold;
+}
+.jkr-sell-content {
+    flex-direction: column;
+    padding-top: 2rem;
+}
+.jkr-sell-content form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+}
+.jkr-sell-content form div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.jkr-sell-content input {
+    margin: 1rem;
+    width: 65%;
+}
+.jkr-sell-content button {
+    background-color: white;
+    color: black;
+    margin: 2rem auto;
+    width: 25%;
+}
+.jkr-sell-content button:hover {
+    background-color: #888888;
+}
