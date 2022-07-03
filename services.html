@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JKR Agency</title>
+        <title>JKR </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" href="img/home-logo.svg" type="image/icon">
     </head>
-    <body>
-        <div class="jkr-header">
+    <body class="jkr-services">
+        <header class="jkr-header">
+            <div class="jkr-header-icon">
+                <img src="img/hamburger-menu.svg">
+            </div>
+            <div class="jkr-close-header-icon">
+                <img src="img/close-icon.svg">
+            </div>
             <div class="jkr-header-title">
                 <a href="./index.html">
                     <img src="img/home-logo.svg" alt="Home Icon">
-                    <div class="jkr-header-title-content">JKR Agency</div>
+                    <div class="jkr-header-title-content">JKR </div>
                 </a>
             </div>
             <ul class="jkr-header-menu">
@@ -23,9 +29,9 @@
                 <li><a href="./contact-us.html">Contact Us</a></li>
             </ul>
             <div class="jkr-header-account">
-                <img src="img/home-account.png" alt="Account Login">
+                <img src="img/home-account.png" alt="Account Login" data-micromodal-trigger="modal-1">
             </div>
-        </div>
+        </header>
         <div class="jkr-main">
             <div class="jkr-buy">
                 <div class="jkr-buy-title">Buy or Rent a home</div>
@@ -102,13 +108,86 @@
                     </div>
                 </div>
             </div>
+
+            <!-- charts included here -->
+            <div class="jkr-services-charts">
+                <div class="jkr-services-chart-1">
+                    <div class="jkr-chart-line">
+                        <canvas id="chart-line" width="400" height="400"></canvas>
+                        <h4 class="jkr-line-footer">Source: U.S. Federal Housing Finance </h4>
+                    </div>
+                    <div class="jkr-services-subcontent-1">
+                        <img src="./img/home-services-promise.jpg" alt="Our Promise">
+                        <h2>Even with the growing prices, we promise to provide you with the best rates available in the market.</h2>
+                    </div>
+                </div>
+                <div class="jkr-services-chart-2">
+                    <div class="jkr-services-subcontent-2">
+                        <img src="./img/home-services-promise.jpg" alt="Our Promise">
+                        <h2>Even with the growing prices, we promise to provide you with the best rates available in the market.</h2>
+                    </div>
+                    <div class="jkr-chart-pie">
+                        <h3 class="jkr-line-header">Areas of listed homes in sq.ft</h3>
+                        <canvas id="chart-pie" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
         </div>
-        <canvas id="myChart" width="400" height="400"></canvas>
-        <div class="jkr-footer">
+
+        <!-- footer -->
+        <footer class="jkr-footer">
             <p class="jkr-copyright">
-                © 2022 JKR Agency. All Rights Reserved
+                © 2022 JKR. All Rights Reserved
             </p>
+        </footer>
+
+        <!-- login/register modal -->
+        <div class="login-modal">
+            <div class="jkr-close-login-icon">
+                <img src="img/close-icon.svg">
+            </div>
+            <div class="login-modal-box">
+                <div class="login-headers">
+                    <h2 class="login-header active">Login</h2>
+                    <h2 class="register-header">Register</h2>
+                </div>
+                <div class="login-form is-open">
+                    <form>
+                        <div class="field-mail">
+                            <label for="jkr-mail">Email:</label>
+                            <input type="email" id="jkr-mail" name="jkr-mail" required>
+                        </div>
+                        <div class="field-pwd">
+                            <label for="jkr-password">Password:</label>
+                            <input type="password" id="jkr-password" name="jkr-password" required>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form> 
+                </div>
+                <div class="register-form">
+                    <form>
+                        <div class="field-fname">
+                            <label for="jkr-fname">First name:</label>
+                            <input type="text" id="jkr-fname" name="jkr-fname" required>
+                        </div>
+                        <div class="field-lname">
+                            <label for="jkr-lname">Last name:</label>
+                            <input type="text" id="jkr-lname" name="jkr-lname" required>
+                        </div>
+                        <div class="field-mail">
+                            <label for="jkr-mail">Email:</label>
+                            <input type="email" id="jkr-mail" name="jkr-mail" required>
+                        </div>
+                        <div class="field-pwd">
+                            <label for="jkr-password">Password:</label>
+                            <input type="password" id="jkr-password" name="jkr-password" required>
+                        </div>
+                        <button type="submit">Register</button>
+                    </form> 
+                </div>
+            </div>
         </div>
+        <!-- scripts -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="js/main.js"></script>
     </body>

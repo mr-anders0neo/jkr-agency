@@ -8,19 +8,38 @@ body {
 }
 button {
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
+    margin: auto;
+    background-color: black;
+    color: white;
+}
+button:hover {
+    background-color: #333333;
+}
+button[type='button'] {
+    background-color: white;
+    color: black;
+}
+button[type='button']:hover {
+    background-color: #888888;
+}
+form input {
+    box-shadow: 5px 10px #888888;
 }
 a {
     text-decoration: none;
     color: white;
+}
+img {
+    width: 100%;
 }
 /****** jkr-header styles *******/
 .jkr-header {
     position: sticky;
     top: 0;
     background: black;
-    opacity: 0.9;
+    z-index: 1;
     padding: 1% 10%;
 }
 .jkr-header, .jkr-header-title {
@@ -58,9 +77,17 @@ a {
     cursor: pointer;
     text-decoration: underline;
 }
+.jkr-header-icon {
+    display: none;
+}
+.jkr-close-header-icon {
+    display: none;
+}
 @media screen and (max-width:600px) {
     .jkr-header {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        padding: 5%;
+        align-items: end;
     }
     .jkr-header-title {
         flex-basis: 100%;
@@ -75,9 +102,97 @@ a {
     .jkr-header-menu li {
         flex-basis: 100%;
     }
+    .jkr-header-icon {
+        display: block;
+    }
+    .jkr-header-icon img {
+        width: 90%;
+    }
+    .jkr-header-account img {
+        width: 1.75rem;
+    }
+    .jkr-header-menu {
+        display: none;
+    }
+    .jkr-header-menu.is-open {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: black;
+        display: flex;
+        align-content: center;
+    }
+    .jkr-header-menu li {
+        margin: 2rem;
+    }
+    .jkr-close-header-icon.is-open {
+        display: block;
+        z-index: 1;
+    }
 }
 /****** jkr-footer styles *******/
 .jkr-footer {
     display: flex;
     justify-content: center;
+    color: white;
+    background-color: black;
+}
+
+/****** login modal styles ******/
+.login-modal {
+    display: none;
+}
+.login-modal.is-open {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.jkr-close-login-icon {
+    position: fixed;
+    top: 10%;
+    right: 15%;
+    cursor: pointer;
+}
+.login-modal-box {
+    background-color: white;
+    padding: 4rem;
+}
+.register-form, .login-form {
+    display: none;
+}
+.login-headers {
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.login-modal-box .active {
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid black;
+}
+.login-modal-box [class*='-form'] div {
+    display: flex;
+    justify-content: space-between;
+}
+.login-modal-box form input {
+    margin: 0 0 1.5rem 1.5rem;
+}
+.login-modal-box form {
+    display: flex;
+    flex-direction: column;
+}
+.login-modal-box button {
+    margin-top: 1rem;
+}
+.login-form.is-open, .register-form.is-open {
+    display: block;
 }
