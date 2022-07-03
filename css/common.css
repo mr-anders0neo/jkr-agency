@@ -134,10 +134,17 @@ img {
 }
 /****** jkr-footer styles *******/
 .jkr-footer {
+    padding-top: 2rem;
     display: flex;
     justify-content: center;
     color: white;
     background-color: black;
+    text-align: center;
+    flex-direction: column;
+}
+.jkr-media-links img {
+    width: 3rem;
+    margin: 1rem;
 }
 
 /****** login modal styles ******/
