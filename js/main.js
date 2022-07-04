@@ -117,18 +117,20 @@ const redirectServices = () => {
 
 // initialize the carousel on homepage
 const initCarousel = () => {
-    let index = 0;
-    startCarousel();
+    if (document.querySelector('.jkr-content3')) {
+        let index = 0;
+        startCarousel();
 
-    function startCarousel() {
-        let i;
-        let images = document.getElementsByClassName("jkr-listing");
-        for (i = 0; i < images.length; i++) {
-            images[i].style.display = "none";
+        function startCarousel() {
+            let i;
+            let images = document.getElementsByClassName("jkr-listing");
+            for (i = 0; i < images.length; i++) {
+                images[i].style.display = "none";
+            }
+            index++;
+            if (index > images.length) {index = 1}
+            images[index-1].style.display = "block";
+            setTimeout(startCarousel, 2000);
         }
-        index++;
-        if (index > images.length) {index = 1}
-        images[index-1].style.display = "block";
-        setTimeout(startCarousel, 2000);
     }
 };

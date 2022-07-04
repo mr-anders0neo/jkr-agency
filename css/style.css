@@ -58,7 +58,6 @@
 }
 .jkr-content3-body {
     width: 100%;
-    height: 100vh;
     background: no-repeat center url('../img/home-slider-bg-img.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -74,9 +73,19 @@
     }
     .jkr-content1-text {
         text-align: center;
+        margin: 0 2rem;
     }
     .jkr-content1-title {
         margin-bottom: 1rem;
+    }
+    .jkr-content2-body {
+        height: auto;
+        flex-direction: column;
+        padding: 2rem 0;
+    }
+    .jkr-content2-card {
+        width: 90%;
+        margin: 1rem 0;
     }
 }
 /****** jkr-buy content styles *******/
@@ -201,6 +210,14 @@
     .jkr-sell-content {
         flex-wrap: wrap;
         justify-content: center;
+        margin: 2rem;
+    }
+    .jkr-sell-content form {
+        width: 100%;
+    }
+    .jkr-sell-content form div {
+        flex-direction: column;
+        padding-bottom: 1rem;
     }
 }
 /****** jkr-amenities content styles *******/
@@ -255,7 +272,7 @@
         padding: 2rem 0;
     }
     .jkr-amenities-content {
-        margin-bottom: 2rem;
+        padding-bottom: 2rem;
     }
     .jkr-amenities-card {
         width: 45%;
@@ -296,7 +313,17 @@ body.jkr-services {
     background: black;
     color: white;
 }
-
+@media screen and (max-width:600px) {
+    [class*='jkr-services-chart-'] {
+        flex-direction: column;
+    }
+    [class*='jkr-chart-'], [class*='jkr-services-subcontent-'] {
+        width: 90%;
+    }
+    .jkr-services-chart-1 {
+        flex-direction: column-reverse;
+    }
+}
 /******** Carousel styles *********/
 .jkr-images-container {
     max-width: 1000px;
@@ -321,7 +348,7 @@ body.jkr-services {
     width: 100%;
     text-align: center;
 }
-.active {
+.jkr-content3 .active {
     background-color: #717171;
 }
 .jkr-fade {
@@ -331,4 +358,16 @@ body.jkr-services {
 @keyframes jkr-fade {
     from {opacity: .4}
     to {opacity: 1}
+}
+@media screen and (max-width:600px) {
+    .jkr-images-container img {
+        width: 100%;
+        height: 50vh;
+    }
+    .jkr-images-container {
+        height: 50vh;
+    }
+    .jkr-listing-text {
+        font-size: 2rem;
+    }
 }
