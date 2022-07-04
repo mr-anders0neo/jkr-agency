@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburgerMenu();
     // initialize login dialog box
     loginDialog();
+    // handle redirect to services page
+    redirectServices();
+    // initialize the carousel
+    initCarousel();
 });
 
 // Chart.js function
@@ -97,4 +101,34 @@ const loginDialog = () => {
         document.querySelector('.login-modal')?.classList.remove('is-open');
     });
     toggleLogin();
+};
+
+// redirect to services page from home
+const redirectServices = () => {
+    const buttons = document.querySelectorAll('.jkr-content2-card button');
+    if(buttons.length > 0) {
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                window.location.href = 'services.html';
+            });
+        })
+    }
+};
+
+// initialize the carousel on homepage
+const initCarousel = () => {
+    let index = 0;
+    startCarousel();
+
+    function startCarousel() {
+        let i;
+        let images = document.getElementsByClassName("jkr-listing");
+        for (i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+        }
+        index++;
+        if (index > images.length) {index = 1}
+        images[index-1].style.display = "block";
+        setTimeout(startCarousel, 2000);
+    }
 };

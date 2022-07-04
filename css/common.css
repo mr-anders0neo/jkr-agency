@@ -1,4 +1,7 @@
 /****** common styles *******/
+* {
+    box-sizing:border-box
+}
 body {
     font-family: 'DM Sans', serif;
     font-size: 1rem;
@@ -24,7 +27,7 @@ button[type='button'] {
 button[type='button']:hover {
     background-color: #888888;
 }
-form input {
+form input, form textarea {
     box-shadow: 5px 10px #888888;
 }
 a {
@@ -56,7 +59,7 @@ img {
     text-decoration: none;
 }
 .jkr-header-title img {
-    width: 2rem;
+    width: 2.5rem;
     margin-right: 0.5rem;
 }
 .jkr-header-menu {
@@ -171,6 +174,7 @@ img {
 }
 .login-modal-box {
     background-color: white;
+    color: black;
     padding: 4rem;
 }
 .register-form, .login-form {
