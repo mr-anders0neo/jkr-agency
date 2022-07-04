@@ -48,3 +48,13 @@ body.contact .jkr-sell {
 .jkr-sell-content button:hover {
     background-color: #888888;
 }
+@media screen and (max-width:600px) {
+    .jkr-sell-content {
+        padding: 2rem;
+        margin: 0;
+        text-align: center;
+    }
+    .jkr-sell-content form {
+        width: 100%;
+    }
+}
