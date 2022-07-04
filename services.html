@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JKR </title>
+        <title>JKR</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
         <link rel="stylesheet" href="css/common.css">
@@ -86,33 +86,42 @@
             <div class="jkr-sell">
                 <div class="jkr-sell-title">Sell a home</div>
                 <div class="jkr-sell-content">
-                    <div class="jkr-sell-content-left">
-                        <img src="img/home-sell.jpg">
-                    </div>
-                    <div class="jkr-sell-content-right">
-                        <p>We promise to provide the best rates!</p>
-                        <p>Check your price below</p>
-                        <form>
-                            <label for="jkr-fname">First name:</label><br>
-                            <input type="text" id="jkr-fname" name="jkr-fname" required><br>
-                            <label for="jkr-lname">Last name:</label><br>
-                            <input type="text" id="jkr-lname" name="jkr-lname" required><br>
-                            <label for="jkr-mail">Email:</label><br>
-                            <input type="email" id="jkr-mail" name="jkr-mail" required><br>
-                            <label for="jkr-phone">Mobile No:</label><br>
-                            <input type="tel" id="jkr-phone" name="jkr-phone" required><br>
-                            <label for="jkr-address">Address:</label><br>
-                            <input type="textarea" id="jkr-address" name="jkr-address" required><br>
-                            <button type="button">Enquire price</button>
-                          </form> 
-                    </div>
+                    <p>We promise to provide the best rates!</p>
+                    <p>Check your price below</p>
+                    <form>
+                        <div class="field-fname">
+                            <label for="jkr-fname">First name:</label>
+                            <input type="text" id="jkr-fname" name="jkr-fname" required>
+                        </div>
+                        <div class="field-lname">
+                            <label for="jkr-lname">Last name:</label>
+                            <input type="text" id="jkr-lname" name="jkr-lname" required>
+                        </div>
+                        <div class="field-mail">
+                            <label for="jkr-mail">Email:</label>
+                            <input type="email" id="jkr-mail" name="jkr-mail" required>
+                        </div>
+                        <div class="field-mobile">
+                            <label for="jkr-phone">Mobile:</label>
+                            <input type="tel" id="jkr-phone" name="jkr-phone" required>
+                        </div>
+                        <div class="field-address">
+                            <label for="jkr-address">Address:</label>
+                            <textarea type="text" id="jkr-address" name="jkr-address" required></textarea>
+                        </div>
+                        <button type="button">Enquire price</button>
+                    </form>
                 </div>
             </div>
 
             <!-- charts included here -->
             <div class="jkr-services-charts">
+                <div class="jkr-charts-header">
+                    <h1>Housing Market Data</h1>
+                </div>
                 <div class="jkr-services-chart-1">
                     <div class="jkr-chart-line">
+                        <h3 class="jkr-line-header">Growth in housing prices of Florida</h3>
                         <canvas id="chart-line" width="400" height="400"></canvas>
                         <h4 class="jkr-line-footer">Source: U.S. Federal Housing Finance </h4>
                     </div>
@@ -123,11 +132,11 @@
                 </div>
                 <div class="jkr-services-chart-2">
                     <div class="jkr-services-subcontent-2">
-                        <img src="./img/home-services-promise.jpg" alt="Our Promise">
-                        <h2>Even with the growing prices, we promise to provide you with the best rates available in the market.</h2>
+                        <img src="./img/home-sizes.webp" alt="Home Sizes">                        
+                        <h2>We have homes of all sizes to suit your family needs perfectly.</h2>
                     </div>
                     <div class="jkr-chart-pie">
-                        <h3 class="jkr-line-header">Areas of listed homes in sq.ft</h3>
+                        <h3 class="jkr-pie-header">Areas of listed homes in sq.ft</h3>
                         <canvas id="chart-pie" width="400" height="400"></canvas>
                     </div>
                 </div>
@@ -136,9 +145,19 @@
 
         <!-- footer -->
         <footer class="jkr-footer">
-            <p class="jkr-copyright">
+            <div class="jkr-social">
+                <h4>Follow us on:</h4>
+                <div class="jkr-media-links">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="img/home-facebook.svg"></a>
+                    <a href="https://www.linkedin.com/" target="_blank"><img src="img/home-linkedin.svg"></a>
+                    <a href="https://www.twitter.com/" target="_blank"><img src="img/home-twitter.svg"></a>
+                    <a href="https://www.whatsapp.com/" target="_blank"><img src="img/home-whatsapp.svg"></a>
+                </div>
+            </div>
+            <h3 class="jkr-copyright">
                 © 2022 JKR. All Rights Reserved
-            </p>
+            </h3>
+            <img src="img/footer-art.svg">
         </footer>
 
         <!-- login/register modal -->
@@ -187,6 +206,7 @@
                 </div>
             </div>
         </div>
+
         <!-- scripts -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="js/main.js"></script>

@@ -7,7 +7,7 @@ body.contact .jkr-sell {
     margin: 0;
 }
 .jkr-sell-title {
-    height: 25vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,6 +22,7 @@ body.contact .jkr-sell {
 .jkr-sell-content {
     flex-direction: column;
     padding-top: 2rem;
+    margin: 0;
 }
 .jkr-sell-content form {
     display: flex;

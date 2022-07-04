@@ -80,34 +80,40 @@
     }
 }
 /****** jkr-buy content styles *******/
-.jkr-buy {
-    padding: 2% 0;
-    background-color: white;
-}
 .jkr-buy-title {
     text-align: center;
     margin: auto;
     padding: 2% 0;
     font-size: 2rem;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 30vh;
+    background: no-repeat bottom url('../img/home-buy-bg-img.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 .jkr-buy-content {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 4rem 0;
 }
 .jkr-buy-content img {
     width: 100%;
 }
 .jkr-buy-card {
     margin: 0 1%;
-    background-color: #F2F6F7;
+    background-color: black;
+    border: 1px solid white;
 }
 .jkr-card-content {
     display: flex;
     flex-direction: column;
     margin: 1rem;
+    text-align: center;
 }
 .jkr-card-title {
     font-weight: bold;
@@ -139,47 +145,54 @@
     }
 }
 /****** jkr-sell content styles *******/
-.jkr-sell {
-    margin: 2% 10%;
-    background-color: #F2F6F7;
-}
 .jkr-sell-title {
     text-align: center;
     margin: auto;
     padding: 2% 0;
     font-size: 2rem;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 30vh;
+    background: no-repeat center url('../img/home-sell-bg-img.webp');
+    background-size: cover;
 }
 .jkr-sell-content  {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    margin: 4rem 0;
 }
-.jkr-sell-content-left {
-    width: 55%;
-    margin-right: 5%;
-}
-.jkr-sell-content-left img {
-    width: 100%;
-}
-.jkr-sell-content-right p {
+.jkr-sell-content p {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0.5rem 0;
 }
-.jkr-sell-content-right form {
+.jkr-sell-content form {
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
 }
-.jkr-sell-content-right label {
+.jkr-sell-content label {
     font-size: 1.25rem;
 }
-.jkr-sell-content-right input, .jkr-sell-content-right textarea {
-    width: 80%;
+.jkr-sell-content form div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.jkr-sell-content input, .jkr-sell-content textarea {
+    width: 70%;
     margin: 0.5rem 0;
 }
-.jkr-sell-content-right button {
+.jkr-sell-content button {
     font-size: 1rem;
     padding: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 @media screen and (max-width:600px) {
     .jkr-sell-title {
@@ -188,11 +201,6 @@
     .jkr-sell-content {
         flex-wrap: wrap;
         justify-content: center;
-    }
-    .jkr-sell-content-left {
-        margin: 0;
-        width: 100%;
-        padding-bottom: 1rem;
     }
 }
 /****** jkr-amenities content styles *******/
@@ -232,6 +240,11 @@
 .jkr-amenities-card img {
     margin: 5% 0;
     width: 75%;
+    transition: all 0.5s ease-out;
+}
+.jkr-amenities-card img:hover {
+    width: 80%;
+    transition: all 0.5s ease-in;
 }
 .jkr-amenities-card-title {
     font-size: 1.25rem;
@@ -251,19 +264,71 @@
 }
 /******* charts styles ********/
 [class*='jkr-chart-'], [class*='jkr-services-subcontent-'] {
-    width: 40%;
+    width: 30%;
 }
 .jkr-services-charts {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    background-color: white;
+    color: black;
+}
+.jkr-charts-header {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: no-repeat center url('../img/home-data-bg-img.jpg');
+    background-size: cover;
 }
 [class*='jkr-services-chart-'] {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 2rem 0;
 }
 .jkr-services-charts img {
     width: 75%;
+}
+body.jkr-services {
+    background: black;
+    color: white;
+}
+
+/******** Carousel styles *********/
+.jkr-images-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    height: 100vh;
+}
+.jkr-images-container img {
+    width: auto;
+    height: 100vh;
+}
+.jkr-listing {
+    display: none;
+}
+.jkr-listing-text {
+    color: black;
+    font-size: 3rem;
+    padding: 8px 12px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 45%;
+    width: 100%;
+    text-align: center;
+}
+.active {
+    background-color: #717171;
+}
+.jkr-fade {
+    animation-name: jkr-fade;
+    animation-duration: 1.5s;
+}
+@keyframes jkr-fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
