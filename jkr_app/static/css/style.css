@@ -66,6 +66,7 @@
     .jkr-content1 {
         flex-wrap: wrap;
         justify-content: center;
+        background-attachment: unset;
     }
     .jkr-content1 img {
         width: 100%;
