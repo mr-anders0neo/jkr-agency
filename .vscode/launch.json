@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "jkr_app.webapp",
+                "FLASK_APP": "jkr_app.main",
                 "FLASK_ENV": "development"
             },
             "args": [

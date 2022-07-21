@@ -11,62 +11,15 @@
     </head>
     <body class="contact">
         {% include "header.html" ignore missing %}
-        <div class="jkr-sell">
-            <div class="jkr-sell-title"><strong>CONTACT US</strong></div>
-            <div class="jkr-sell-content">
-                <h2>We promise to get back to you as soon as we can!!</h2>
-                <h2>Contact us for more Info.</h2>
-                <form>
-                    <div class="field-fname">
-                        <label for="jkr-fname">First name:</label>
-                        <input type="text" id="jkr-fname" name="jkr-fname" required>
-                    </div>
-                    <div class="field-lname">
-                        <label for="jkr-lname">Last name:</label>
-                        <input type="text" id="jkr-lname" name="jkr-lname" required>
-                    </div>
-                    <div class="field-mail">
-                        <label for="jkr-mail">Email:</label>
-                        <input type="email" id="jkr-mail" name="jkr-mail" required>
-                    </div>
-                    <div class="field-mobile">
-                        <label for="jkr-phone">Mobile:</label>
-                        <input type="tel" id="jkr-phone" name="jkr-phone" required>
-                    </div>
-                    <div class="field-issue">
-                        <label for="jkr-issue">Subject:</label>
-                        <input type="text" id="jkr-issue" name="jkr-issue" required>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-        {% include 'footer.html' ignore missing %}
-        {% include 'login.html' ignore missing %}
-        <!-- login/register modal -->
-        <div class="login-modal">
-            <div class="jkr-close-login-icon">
-               <img src=" {{ url_for('static', filename='img/close-icon.png')}}">
-            <div class="login-modal-box">
-                <div class="login-headers">
-                    <h2 class="login-header active">Login</h2>
-                    <h2 class="register-header">Register</h2>
-                </div>
-                <div class="login-form is-open">
-                    <form>
-                        <div class="field-mail">
-                            <label for="jkr-mail">Email:</label>
-                            <input type="email" id="jkr-mail" name="jkr-mail" required>
-                        </div>
-                        <div class="field-pwd">
-                            <label for="jkr-password">Password:</label>
-                            <input type="password" id="jkr-password" name="jkr-password" required>
-                        </div>
-                        <button type="submit">Login</button>
-                    </form> 
-                </div>
-                <div class="register-form">
-                    <form>
+        {% if msg %}
+            <div class="jkr-contact-response">Hi, {{ fname }} - {{ msg }}</div>
+        {% else %}
+            <div class="jkr-sell">
+                <div class="jkr-sell-title"><strong>CONTACT US</strong></div>
+                <div class="jkr-sell-content">
+                    <h2>We promise to get back to you as soon as we can!!</h2>
+                    <h2>Contact us for more Info.</h2>
+                    <form method="POST" action="/contact-us.html">
                         <div class="field-fname">
                             <label for="jkr-fname">First name:</label>
                             <input type="text" id="jkr-fname" name="jkr-fname" required>
@@ -79,15 +32,22 @@
                             <label for="jkr-mail">Email:</label>
                             <input type="email" id="jkr-mail" name="jkr-mail" required>
                         </div>
-                        <div class="field-pwd">
-                            <label for="jkr-password">Password:</label>
-                            <input type="password" id="jkr-password" name="jkr-password" required>
+                        <div class="field-mobile">
+                            <label for="jkr-phone">Mobile:</label>
+                            <input type="tel" id="jkr-phone" name="jkr-phone" required>
                         </div>
-                        <button type="submit">Register</button>
-                    </form> 
+                        <div class="field-issue">
+                            <label for="jkr-issue">Subject:</label>
+                            <input type="text" id="jkr-issue" name="jkr-issue" required>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
                 </div>
             </div>
-        </div>
+        {% endif %}
+        {% include 'footer.html' ignore missing %}
+        {% include 'login.html' ignore missing %}
+
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
         </body>
 </html>
