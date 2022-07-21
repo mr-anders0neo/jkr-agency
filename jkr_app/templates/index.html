@@ -25,7 +25,7 @@
                 </h1>
                 <div class="jkr-content2-body">
                     <div class="jkr-content2-card">
-                        <img src="img/buy-a-home.webp">
+                        <img src="{{ url_for('static', filename='img/buy-a-home.webp')}}">
                         <div class="jkr-card-content">
                             <div class="jkr-card-title">
                                 Buy a home
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="jkr-content2-card">
-                        <img src="img/finance_a_home.webp">
+                        <img src="{{ url_for('static', filename='img/finance_a_home.webp')}}">
                         <div class="jkr-card-content">
                             <div class="jkr-card-title">
                                 Sell a home
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="jkr-content2-card">
-                        <img src="img/rent_a_home.webp">
+                       <img src="{{ url_for('static', filename='img/rent_a_home.webp')}}">
                         <div class="jkr-card-content">
                             <div class="jkr-card-title">
                                 Rent a home
@@ -69,17 +69,17 @@
                 <div class="jkr-content3-body">
                     <div class="jkr-images-container">
                         <div class="jkr-listing jkr-fade">
-                            <img src="img/home-buy-01.jpg">
+                            <img src="{{ url_for('static', filename='img/home-buy-01.jpg')}}">
                             <div class="jkr-listing-text">Cambridge Woods</div>
                         </div>
                     
                         <div class="jkr-listing jkr-fade">
-                            <img src="img/home-buy-02.jpg">
+                            <img src="{{ url_for('static', filename='img/home-buy-02.jpg')}}">
                             <div class="jkr-listing-text">Sunstone Palms</div>
                         </div>
                     
                         <div class="jkr-listing jkr-fade">
-                            <img src="img/home-buy-03.jpg">
+                        <img src="{{ url_for('static', filename='img/home-buy-03.jpg')}}">
                             <div class="jkr-listing-text">Oak Ramble Apartments</div>
                         </div>
                     </div>
@@ -89,35 +89,37 @@
                 <h1 class="jkr-amenities-title">Our Amenities</h1>
                 <div class="jkr-amenities-content">
                     <div class="jkr-amenities-card">
-                        <img src="img/home-smart-lock.jpg">
+                        
+                        <img src="{{ url_for('static', filename='img/home-smart-lock.jpg')}}">
                         <div class="jkr-amenities-card-title">Smart Locks</div>
                     </div>
                     <div class="jkr-amenities-card">
-                        <img src="img/home-swimming-pool.jpg">
+                        <img src=" {{ url_for('static', filename='img/home-swimming-pool.jpg')}}">
                         <div class="jkr-amenities-card-title">Swimming Pool</div>
                     </div>
                     <div class="jkr-amenities-card">
-                        <img src="img/home-smart-outlet.jpg">
+                        <img src="{{ url_for('static', filename='img/home-smart-outlet.jpg')}}">
                         <div class="jkr-amenities-card-title">Smart Outlets</div>
                     </div>
                     <div class="jkr-amenities-card">
-                        <img src="img/home-parking.jpg">
+                        <img src="{{ url_for('static', filename='img/home-parking.jpg')}}">
                         <div class="jkr-amenities-card-title">Parking Space</div>
                     </div>
                     <div class="jkr-amenities-card">
-                        <img src="img/home-security.jpg">
+                        <img src="{{ url_for('static', filename='img/home-security.jpg')}}">
                         <div class="jkr-amenities-card-title">Private Security</div>
                     </div>
                     <div class="jkr-amenities-card">
-                        <img src="img/home-smart-thermostat.jpg">
+                        <img src="{{ url_for('static', filename='img/home-smart-thermostat.jpg')}}">
                         <div class="jkr-amenities-card-title">Smart Thermostat</div>
                     </div>
                 </div>
             </div>
         </div>
-        {% include ['footer.html', 'login.html'] ignore missing %}        
+        {% include 'footer.html' ignore missing %}
+        {% include 'login.html' ignore missing %}     
 
         <!-- scripts -->
-        <script src="js/main.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>>
     </body>
 </html>

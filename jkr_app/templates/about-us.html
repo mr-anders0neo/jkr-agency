@@ -4,34 +4,12 @@
         <title>JKR</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
-        <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/about-us.css">
-        <link rel="icon" href="img/home-logo.png" type="image/icon">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about-us.css')}}" />
+        <link rel="icon" href="{{ url_for('static', filename='img/home-logo.png')}}" type="image/icon">
     </head>
     <body>
-      <header class="jkr-header">
-        <div class="jkr-header-icon">
-            <img src="img/hamburger-menu.png">
-        </div>
-        <div class="jkr-close-header-icon">
-            <img src="img/close-icon.png">
-        </div>
-        <div class="jkr-header-title">
-            <a href="./index.html">
-                <img src="img/home-logo.png" alt="Home Icon">
-                <div class="jkr-header-title-content">JKR </div>
-            </a>
-        </div>
-        <ul class="jkr-header-menu">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./about-us.html">About Us</a></li>
-            <li><a href="./services.html">Services</a></li>
-            <li><a href="./contact-us.html">Contact Us</a></li>
-        </ul>
-        <div class="jkr-header-account">
-            <img src="img/home-account.png" alt="Account Login" data-micromodal-trigger="modal-1">
-        </div>
-      </header>
+      {% include "header.html" ignore missing %}
         <div class="jkr-about-main">
           <div class="jkr-about-section">
             <h1>ABOUT US</h1>
@@ -42,7 +20,7 @@
           <div class="jkr-about-row">
             <div class="jkr-about-column">
               <div class="jkr-about-card">
-                <img src="img/rupa.png" alt="Rupa">
+              <img src="{{ url_for('static', filename='img/rupa.png')}}" alt="Rupa">
                 <div class="container">
                   <h2>Rupa</h2>
                   <p class="title">Team Mate</p>
@@ -55,7 +33,7 @@
           
 			<div class="jkr-about-column">
 				<div class="jkr-about-card">
-				  <img src="img/jaswanth.jpeg" alt="Jaswanth">
+          <img src="{{ url_for('static', filename='img/jaswanth.jpeg')}}" alt="Jaswanth">
 				  <div class="container">
 					<h2>Jaswanth</h2>
 					<p class="title">Team Mate</p>
@@ -68,7 +46,7 @@
 
             <div class="jkr-about-column">
               <div class="jkr-about-card">
-                <img src="img/kushal.jpeg" alt="Kushal">
+                <img src="{{ url_for('static', filename='img/kushal.jpeg')}}" alt="Kushal">
                 <div class="container">
                   <h2>Kushal</h2>
                   <p class="title">Team Mate</p>
@@ -81,68 +59,9 @@
 
           </div>
         </div>
-        <footer class="jkr-footer">
-          <div class="jkr-social">
-              <h4>Follow us on:</h4>
-              <div class="jkr-media-links">
-                  <a href="https://www.facebook.com/" target="_blank"><img src="img/home-facebook.png"></a>
-                  <a href="https://www.linkedin.com/" target="_blank"><img src="img/home-linkedin.png"></a>
-                  <a href="https://www.twitter.com/" target="_blank"><img src="img/home-twitter.png"></a>
-                  <a href="https://www.whatsapp.com/" target="_blank"><img src="img/home-whatsapp.png"></a>
-              </div>
-          </div>
-          <h3 class="jkr-copyright">
-              © 2022 JKR. All Rights Reserved
-          </h3>
-          <img src="img/footer-art.png">
-        </footer>
+        {% include 'footer.html' ignore missing %}
+        {% include 'login.html' ignore missing %}
 
-        <!-- login/register modal -->
-        <div class="login-modal">
-          <div class="jkr-close-login-icon">
-              <img src="img/close-icon.png">
-          </div>
-          <div class="login-modal-box">
-              <div class="login-headers">
-                  <h2 class="login-header active">Login</h2>
-                  <h2 class="register-header">Register</h2>
-              </div>
-              <div class="login-form is-open">
-                  <form>
-                      <div class="field-mail">
-                          <label for="jkr-mail">Email:</label>
-                          <input type="email" id="jkr-mail" name="jkr-mail" required>
-                      </div>
-                      <div class="field-pwd">
-                          <label for="jkr-password">Password:</label>
-                          <input type="password" id="jkr-password" name="jkr-password" required>
-                      </div>
-                      <button type="submit">Login</button>
-                  </form> 
-              </div>
-              <div class="register-form">
-                  <form>
-                      <div class="field-fname">
-                          <label for="jkr-fname">First name:</label>
-                          <input type="text" id="jkr-fname" name="jkr-fname" required>
-                      </div>
-                      <div class="field-lname">
-                          <label for="jkr-lname">Last name:</label>
-                          <input type="text" id="jkr-lname" name="jkr-lname" required>
-                      </div>
-                      <div class="field-mail">
-                          <label for="jkr-mail">Email:</label>
-                          <input type="email" id="jkr-mail" name="jkr-mail" required>
-                      </div>
-                      <div class="field-pwd">
-                          <label for="jkr-password">Password:</label>
-                          <input type="password" id="jkr-password" name="jkr-password" required>
-                      </div>
-                      <button type="submit">Register</button>
-                  </form> 
-              </div>
-          </div>
-        </div>
-        <script src="js/main.js"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     </body>
 </html>
