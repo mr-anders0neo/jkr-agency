@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
     // logout user
     logoutUser();
+    // check user login
+    loginUser();
 });
 
 // Chart.js function
@@ -94,7 +96,7 @@ const loginDialog = () => {
         }
     };
     // open the login dialog box
-    const loginIcon = document.querySelector('.jkr-header-account');
+    const loginIcon = document.querySelector('.jkr-header-account img');
     const closeLoginIcon = document.querySelector('.jkr-close-login-icon');
     loginIcon?.addEventListener('click', () => {
         document.querySelector('.login-modal')?.classList.add('is-open');
@@ -141,7 +143,22 @@ const logoutUser = () => {
     const logoutBtn = document.querySelector('.jkr-header-user');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
-            window.location.href = 'index.html'
+            sessionStorage.removeItem('first_name');
+            window.location.href = 'index.html';
         });
+    }
+};
+
+const loginUser = () => {
+    const userLoggedIn = document.querySelector('.jkr-header-user');
+    if (userLoggedIn) {
+        sessionStorage.setItem('first_name', userLoggedIn.innerText);
+    }
+    if (sessionStorage.getItem('first_name')) {
+        const loginDiv = document.querySelector('.jkr-header-account');
+        if (loginDiv) {
+            loginDiv.innerHTML = "<div class='jkr-header-user'>" + sessionStorage.getItem('first_name') + "</div>"
+            logoutUser();
+        }
     }
 };
