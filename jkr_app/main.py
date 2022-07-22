@@ -3,6 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///contact.db'
+app.config['SQLALCHEMY_BINDS'] = {
+    'sell': 'sqlite:///sell.db',
+    'user': 'sqlite:///user.db'
+}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
@@ -11,14 +15,25 @@ def create_tables():
     db.create_all()
 
 class Contact(db.Model):
+    contactId = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(200), nullable=False)
     last_name = db.Column(db.String(200), nullable=False)
-    email = db.Column(db.String(200), primary_key=True)
+    email = db.Column(db.String(200), nullable=False)
     mobile = db.Column(db.BigInteger, nullable=False)
     subject = db.Column(db.String(500), nullable=False)
 
-    def __repr__(self):
-        return '<Contact %r>' % self.email
+class Sell(db.Model):
+    __bind_key__ = 'sell'
+    sellId = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(200), nullable=False)
+    last_name = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(200), nullable=False)
+    mobile = db.Column(db.BigInteger, nullable=False)
+    address = db.Column(db.String(500), nullable=False)
+    area = db.Column(db.Integer, nullable=False)
+    year = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Integer, nullable=False)
+
 
 @app.route("/")
 @app.route("/index.html")
@@ -46,14 +61,33 @@ def contact():
             db.session.commit()
             msg='Thank you for reaching out to us!'
         except Exception as e:
-            msg= 'Please provide unique email'
+            msg='Sorry, our system is currently offline'
     
     return render_template("contact-us.html", msg=msg, fname=fname)
 
-@app.route("/services.html")
+@app.route("/services.html", methods=['POST', 'GET'])
 def services():
-    return render_template("services.html")
-
+    msg=''
+    fname=''
+    if request.method == 'POST':
+        fname = request.form['jkr-fname']
+        try:
+            db.session.add(Sell(
+                first_name=fname,
+                last_name=request.form['jkr-lname'],
+                email=request.form['jkr-mail'],
+                mobile=request.form['jkr-phone'],
+                address=request.form['jkr-address'],
+                area=request.form['jkr-area'],
+                price=request.form['jkr-price'],
+                year=request.form['jkr-year']
+            ))
+            db.session.commit()
+            msg='We will give you a call back with the estimated price'
+        except Exception as e:
+            msg='Sorry, our system is currently offline'
+    
+    return render_template("services.html", msg=msg, fname=fname)
 
 if __name__ == "__main__":
     app.run(debug=True)

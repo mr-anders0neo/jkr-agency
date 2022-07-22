@@ -197,12 +197,19 @@
 }
 .jkr-sell-content input, .jkr-sell-content textarea {
     width: 70%;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
 }
 .jkr-sell-content button {
     font-size: 1rem;
     padding: 0.5rem;
     margin-top: 2rem;
+}
+.jkr-sell-response {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
 }
 @media screen and (max-width:600px) {
     .jkr-sell-title {

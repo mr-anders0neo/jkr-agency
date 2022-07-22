@@ -35,7 +35,7 @@ body.contact .jkr-sell {
     align-items: center;
     justify-content: space-between;
 }
-.jkr-sell-content input {
+.jkr-sell-content input, .jkr-sell-content textarea {
     margin: 1rem;
     width: 65%;
 }

@@ -63,33 +63,49 @@
             </div>
             <div class="jkr-sell">
                 <div class="jkr-sell-title">Sell a home</div>
-                <div class="jkr-sell-content">
-                    <p>We promise to provide the best rates!</p>
-                    <p>Check your price below</p>
-                    <form>
-                        <div class="field-fname">
-                            <label for="jkr-fname">First name:</label>
-                            <input type="text" id="jkr-fname" name="jkr-fname" required>
-                        </div>
-                        <div class="field-lname">
-                            <label for="jkr-lname">Last name:</label>
-                            <input type="text" id="jkr-lname" name="jkr-lname" required>
-                        </div>
-                        <div class="field-mail">
-                            <label for="jkr-mail">Email:</label>
-                            <input type="email" id="jkr-mail" name="jkr-mail" required>
-                        </div>
-                        <div class="field-mobile">
-                            <label for="jkr-phone">Mobile:</label>
-                            <input type="tel" id="jkr-phone" name="jkr-phone" required>
-                        </div>
-                        <div class="field-address">
-                            <label for="jkr-address">Address:</label>
-                            <textarea type="text" id="jkr-address" name="jkr-address" required></textarea>
-                        </div>
-                        <button type="button">Enquire price</button>
-                    </form>
-                </div>
+                {% if msg %}
+                    <div class="jkr-sell-response">Hi, {{ fname }} - {{ msg }}</div>
+                {% else %}
+                    <div class="jkr-sell-content">
+                        <p>We promise to provide the best rates!</p>
+                        <p>Check your price below</p>
+                        <form method="POST" action="/services.html">
+                            <div class="field-fname">
+                                <label for="jkr-fname">First name:</label>
+                                <input type="text" id="jkr-fname" name="jkr-fname" required>
+                            </div>
+                            <div class="field-lname">
+                                <label for="jkr-lname">Last name:</label>
+                                <input type="text" id="jkr-lname" name="jkr-lname" required>
+                            </div>
+                            <div class="field-mail">
+                                <label for="jkr-mail">Email:</label>
+                                <input type="email" id="jkr-mail" name="jkr-mail" required>
+                            </div>
+                            <div class="field-mobile">
+                                <label for="jkr-phone">Mobile:</label>
+                                <input type="tel" id="jkr-phone" name="jkr-phone" required>
+                            </div>
+                            <div class="field-area">
+                                <label for="jkr-area">Home Area:</label>
+                                <input type="number" id="jkr-area" name="jkr-area" required>
+                            </div>
+                            <div class="field-year">
+                                <label for="jkr-year">Built Year:</label>
+                                <input type="number" id="jkr-year" name="jkr-year" required>
+                            </div>
+                            <div class="field-price">
+                                <label for="jkr-price">Your price:</label>
+                                <input type="number" id="jkr-price" name="jkr-price" required>
+                            </div>
+                            <div class="field-address">
+                                <label for="jkr-address">Address:</label>
+                                <textarea type="text" id="jkr-address" name="jkr-address" required></textarea>
+                            </div>
+                            <button type="submit">Enquire price</button>
+                        </form>
+                    </div>
+                {% endif %}
             </div>
 
             <!-- charts included here -->

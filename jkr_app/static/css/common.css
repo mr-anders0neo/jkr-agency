@@ -20,11 +20,11 @@ button {
 button:hover {
     background-color: #333333;
 }
-button[type='button'] {
+button[type='button'], button[type='submit'] {
     background-color: white;
     color: black;
 }
-button[type='button']:hover {
+button[type='button']:hover, button[type='submit']:hover {
     background-color: #888888;
 }
 form input, form textarea {
