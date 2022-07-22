@@ -18,6 +18,10 @@
         <li><a href="./contact-us.html">Contact Us</a></li>
     </ul>
     <div class="jkr-header-account">
-        <img src="{{ url_for('static', filename='img/home-account.png')}}" alt="Account Login" data-micromodal-trigger="modal-1">
+        {% if fname %}
+            <div class="jkr-header-user">Hi {{fname}} - Logout</div>
+        {% else %}
+            <img src="{{ url_for('static', filename='img/home-account.png')}}" alt="Account Login" data-micromodal-trigger="modal-1">
+        {% endif %}
     </div>
 </header>

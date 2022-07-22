@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     redirectServices();
     // initialize the carousel
     initCarousel();
+    // logout user
+    logoutUser();
 });
 
 // Chart.js function
@@ -132,5 +134,14 @@ const initCarousel = () => {
             images[index-1].style.display = "block";
             setTimeout(startCarousel, 2000);
         }
+    }
+};
+
+const logoutUser = () => {
+    const logoutBtn = document.querySelector('.jkr-header-user');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            window.location.href = 'index.html'
+        });
     }
 };

@@ -86,6 +86,10 @@ img {
 .jkr-close-header-icon {
     display: none;
 }
+.jkr-header-user {
+    color: white;
+    cursor: pointer;
+}
 @media screen and (max-width:600px) {
     .jkr-header {
         flex-wrap: nowrap;

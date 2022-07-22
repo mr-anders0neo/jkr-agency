@@ -1,3 +1,4 @@
+from fnmatch import fnmatchcase
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
@@ -34,6 +35,13 @@ class Sell(db.Model):
     year = db.Column(db.Integer, nullable=False)
     price = db.Column(db.Integer, nullable=False)
 
+class User(db.Model):
+    __bind_key__ = 'user'    
+    userId = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(200), nullable=False)
+    last_name = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(200), nullable=False)
+    password = db.Column(db.String(200), nullable=False)
 
 @app.route("/")
 @app.route("/index.html")
@@ -88,6 +96,41 @@ def services():
             msg='Sorry, our system is currently offline'
     
     return render_template("services.html", msg=msg, fname=fname)
+
+@app.route("/login", methods=['POST', 'GET'])
+def login():
+    msg=''
+    fname=''
+    if request.method == 'POST':
+        try:
+            get_user = User.query.filter_by(email=request.form['jkr-mail']).first()
+            if get_user:
+                fname = get_user.first_name
+                return render_template('index.html', fname=fname)
+
+        except:
+            msg='User not found'
+        
+    return render_template('index.html', msg=msg, fname=fname)
+
+
+@app.route("/register", methods=['POST', 'GET'])
+def register():
+    fname=''
+    if request.method == 'POST':
+        fname = request.form['jkr-fname']
+        try:
+            db.session.add(User(
+                first_name=fname,
+                last_name=request.form['jkr-lname'],
+                email=request.form['jkr-mail'],
+                password=request.form['jkr-password']
+            ))
+            db.session.commit()
+        except:
+            return 'There was an issue with registration'
+
+    return render_template("index.html", fname=fname)
 
 if __name__ == "__main__":
     app.run(debug=True)
